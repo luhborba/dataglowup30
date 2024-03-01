@@ -4,7 +4,7 @@ from dotenv import load_dotenv
 
 load_dotenv()
 
-def download_kaggle_dataset(dataset_name, download_path):
+def download_kaggle_dataset(dataset_name: str, download_path: str):
     """
     A função tem como objetivo realizar o download de conjuntos do Kaglle, UTILIZANDO A api do Kaggle e salvando em um caminho especificado
 
@@ -27,16 +27,8 @@ def download_kaggle_dataset(dataset_name, download_path):
     except subprocess.CalledProcessError as e:
         print(f"Erro ao baixar o conjunto de dados: {e}")
         
-    # Remove o arquivo zip após a extração
-    # try:
-    #     zip_path = os.path.join(download_path, f"{dataset_name.split('/')[1]}.zip")
-    #     os.remove(zip_path)
-    #     print(f"Arquivo zip removido com sucesso.")
-    # except subprocess.CalledProcessError as e:
-    #     print(f"Erro ao baixar o conjunto de dados: {e}")
-        
         
 if __name__ == "__main__":
-    dataset_name = "mkechinov/ecommerce-events-history-in-cosmetics-shop"
-    download_path = "data"
+    dataset_name: str = "mkechinov/ecommerce-events-history-in-cosmetics-shop"
+    download_path: str = "data"
     download_kaggle_dataset(dataset_name, download_path)
