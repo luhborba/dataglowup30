@@ -1,0 +1,18 @@
+[tool.poetry]
+name = "dataglowup30"
+version = "0.1.0"
+description = ""
+authors = ["Luciano Borba <luhborbafilho@gmail.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.12"
+mkdocs = "^1.5.3"
+black = "^24.2.0"
+duckdb = "^0.10.0"
+taskipy = "^1.12.2"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
