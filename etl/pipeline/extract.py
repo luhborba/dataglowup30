@@ -2,8 +2,13 @@ import os
 import subprocess
 from dotenv import load_dotenv
 
+from decorators.utils_log import log_decorator, time_measure_decorator
+
 load_dotenv()
 
+
+@time_measure_decorator
+@log_decorator
 def download_kaggle_dataset(dataset_name: str, download_path: str):
     """
     A função tem como objetivo realizar o download de conjuntos do Kaglle, UTILIZANDO A api do Kaggle e salvando em um caminho especificado
@@ -22,12 +27,26 @@ def download_kaggle_dataset(dataset_name: str, download_path: str):
 
     try:
         # Faz o download do conjunto de dados usando a API do Kaggle
-        subprocess.run(["kaggle", "datasets", "download", "-d", dataset_name, "-p", download_path, "--unzip"], check=True)
-        print(f"O conjunto de dados {dataset_name} foi baixado e salvo como {download_path}.")
+        subprocess.run(
+            [
+                "kaggle",
+                "datasets",
+                "download",
+                "-d",
+                dataset_name,
+                "-p",
+                download_path,
+                "--unzip",
+            ],
+            check=True,
+        )
+        print(
+            f"O conjunto de dados {dataset_name} foi baixado e salvo como {download_path}."
+        )
     except subprocess.CalledProcessError as e:
         print(f"Erro ao baixar o conjunto de dados: {e}")
-        
-        
+
+
 if __name__ == "__main__":
     dataset_name: str = "mkechinov/ecommerce-events-history-in-cosmetics-shop"
     download_path: str = "data"

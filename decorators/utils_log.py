@@ -6,16 +6,13 @@ import time
 logger.remove()
 
 logger.add(
-                sink=stderr,
-                format="{time} <r>{level}</r> <g>{message}</g> {file}",
-                level="INFO"
-            )
+    sink=stderr, format="{time} <r>{level}</r> <g>{message}</g> {file}", level="INFO"
+)
 
-logger.add(
-                "meu_arquivo_de_logs.log",
-                format="{time} {level} {message} {file}",
-                level="INFO"
-            )
+logger.add("log/etl.log", format="{time} {level} {message} {file}", level="INFO")
+
+logger.add("log/etl.log", format="{time} {level} {message} {file}", level="CRITICAL")
+
 
 def log_decorator(func):
     @wraps(func)
@@ -35,7 +32,9 @@ def log_decorator(func):
             except Exception as e:
                 logger.exception(f"Exceção capturada em '{func.__name__}': {e}")
                 raise
+
     return wrapper
+
 
 def time_measure_decorator(func):
     @wraps(func)
@@ -43,6 +42,9 @@ def time_measure_decorator(func):
         start_time = time.time()
         result = func(*args, **kwargs)
         end_time = time.time()
-        logger.info(f"Função '{func.__name__}' executada em {end_time - start_time:.4f} segundos")
+        logger.info(
+            f"Função '{func.__name__}' executada em {end_time - start_time:.4f} segundos"
+        )
         return result
+
     return wrapper
