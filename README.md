@@ -1,4 +1,4 @@
-﻿# Desafio DataGlowUp do Mestre Heitor Sasaki de nº 30
+﻿# Desafio DataGlowUp do Mestre Heitor Sasaki de nº 30 [Em desenvolvimento]
 
 A ideia do projeto é realizar um processo ETL completo utilizando das melhores boas práticas, considerando os dados disponibilizados pelo Mestre Heitor.
 
