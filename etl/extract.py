@@ -2,7 +2,7 @@ import os
 import subprocess
 from dotenv import load_dotenv
 
-from decorators.utils_log import log_decorator, time_measure_decorator
+from decorators.utils_decorators import log_decorator, time_measure_decorator
 
 load_dotenv()
 
