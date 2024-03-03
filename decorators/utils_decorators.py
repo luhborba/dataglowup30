@@ -1,7 +1,8 @@
-from loguru import logger
-from sys import stderr
-from functools import wraps
 import time
+from functools import wraps
+from sys import stderr
+
+from loguru import logger
 
 logger.remove()
 
@@ -37,6 +38,9 @@ def log_decorator(func):
 
 
 def time_measure_decorator(func):
+    """
+    Função decoradora para medir o tempo de execução da função de entrada.
+    """
     @wraps(func)
     def wrapper(*args, **kwargs):
         start_time = time.time()

@@ -1,0 +1,12 @@
+site_name: DataGlowUP nº 30
+
+theme:
+  name: material
+
+repo_name: 'luhbora/dataglowup30'
+repo_url: 'https://github.com/luhborba/dataglowup30'
+
+plugins:
+  - search
+  - mkdocstrings:
+      default_handler: python
