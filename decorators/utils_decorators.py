@@ -1,3 +1,4 @@
+"""Arquivo de Funções Decoradoras."""
 import time
 from functools import wraps
 from sys import stderr
@@ -16,6 +17,11 @@ logger.add("log/etl.log", format="{time} {level} {message} {file}", level="CRITI
 
 
 def log_decorator(func):
+    """Função Decoradora para registrar logs.
+    
+    Args:
+        func: Função que será decorada
+    """
     @wraps(func)
     def wrapper(*args, **kwargs):
         if func.__name__ != "extrair_dado":
@@ -40,7 +46,11 @@ def log_decorator(func):
 def time_measure_decorator(func):
     """
     Função decoradora para medir o tempo de execução da função de entrada.
+    
+    Arg:
+        func: Função que será decorada
     """
+
     @wraps(func)
     def wrapper(*args, **kwargs):
         start_time = time.time()

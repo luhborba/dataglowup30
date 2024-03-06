@@ -1,5 +1,6 @@
-from etl.extract import download_kaggle_dataset
+"""Arquivo raiz que chamara funções de ETL."""
 from etl.charge_init_db import load_csv_charge_duckdb
+from etl.extract import download_kaggle_dataset
 
 # Parametros
 dataset: str = "mkechinov/ecommerce-events-history-in-cosmetics-shop"

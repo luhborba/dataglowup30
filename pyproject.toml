@@ -10,7 +10,6 @@ python = "^3.12.1"
 mkdocs = "^1.5.3"
 black = "^24.2.0"
 duckdb = "^0.10.0"
-taskipy = "^1.12.2"
 python-dotenv = "^1.0.1"
 kaggle = "^1.6.6"
 pytest = "^8.0.2"
@@ -18,6 +17,10 @@ loguru = "^0.7.2"
 isort = "^5.13.2"
 mkdocs-material = "^9.5.12"
 mkdocstrings-python = "^1.8.0"
+mkdocstrings = "^0.24.1"
+taskipy = "^1.12.2"
+pydocstyle = "^6.3.0"
+pip-audit = "^2.7.2"
 
 
 [build-system]

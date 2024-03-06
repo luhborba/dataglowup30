@@ -1,5 +1,7 @@
+"""Função que Contem a função de download de arquivos do Kaggle."""
 import os
 import subprocess
+
 from dotenv import load_dotenv
 
 from decorators.utils_decorators import log_decorator, time_measure_decorator
@@ -11,7 +13,7 @@ load_dotenv()
 @log_decorator
 def download_kaggle_dataset(dataset_name: str, download_path: str):
     """
-    A função tem como objetivo realizar o download de conjuntos do Kaglle, UTILIZANDO A api do Kaggle e salvando em um caminho especificado
+    Função tem como objetivo realizar o download de conjuntos do Kaglle, UTILIZANDO A api do Kaggle e salvando em um caminho especificado.
 
     Args:
         dataset_name (str): Nome do conjunto de dados do Kaggle (por exemplo, "mkechinov/ecommerce-events-history-in-cosmetics-shop").
