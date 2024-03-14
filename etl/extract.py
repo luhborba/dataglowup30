@@ -1,4 +1,4 @@
-"""Função que Contem a função de download de arquivos do Kaggle."""
+"""Arquivo para extração dos dados."""
 import os
 import subprocess
 
