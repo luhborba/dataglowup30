@@ -1,4 +1,4 @@
-"""Arquivo para extração dos dados."""
+"""Este é o arquivo de extração de dados."""
 import os
 import subprocess
 
