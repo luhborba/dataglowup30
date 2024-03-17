@@ -1,0 +1,26 @@
+name: CI Projeto DataGlowUP30
+
+on: [push, pull_request]
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checando Codigo
+        uses: actions/checkout@v2
+
+      - name: Instalação Python
+        uses: actions/setup-python@v2
+        with:
+          python-version: 3.12.1
+
+      - name: Instalação Poetry
+        run: |
+          curl -sSL https://install.python-poetry.org | python3 -
+          echo "$HOME/.local/bin" >> $GITHUB_PATH
+
+      - name: Instalação de dependências
+        run:  poetry install
+
+      - name: Rodar Tests
+        run: poetry run pytest
