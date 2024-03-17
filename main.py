@@ -11,3 +11,5 @@ table_name = "ecomerce_events"
 download_kaggle_dataset(dataset, path)
 # Carregando Arquivos no DuckDB
 load_csv_charge_duckdb(path, table_name)
+
+print("Processo concluído com sucesso!!!!")
